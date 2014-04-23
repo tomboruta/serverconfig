@@ -8,11 +8,11 @@ Given all the various web technologies and nuances in those technologies I have 
 
 Note that this is not the full website. I have written the actual website in the php framework Laravel. However, the core functionality (currently) of Server Config does not need Laravel, so I did not want to hinder those without knowlegde of that particular framework from being discouraged from contributing. To that end, there is no need to make you setup a Laravel project to contribute to this repo.
 
-I've tried to make it as easy as possible for anyone with HTML, jQuery, and Javascript knowledge to contribute. Fork this repo, set it up on your machine and open /public/index.html in your web browser to test. All the functionality is in /public/js/serverConfig.js
+I've tried to make it as easy as possible for anyone with HTML, jQuery, and Javascript knowledge to contribute. Fork this repo, download it to your machine and open /public/index.html in your web browser to test. All the functionality is in /public/js/serverConfig.js
 
 Issues and Pull Requests are always welcome.
 
-### To Do
+### Suggestions
 
 - Add pop-up descriptions for each setting
 - Add more important settings
