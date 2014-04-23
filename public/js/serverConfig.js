@@ -34,26 +34,31 @@ function setDefaults(){
 			{
 				"field":"StartServers",
 				"val":2,
+				"fieldValueSeparator":' ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"MinSpareServers",
 				"val":6,
+				"fieldValueSeparator":' ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"MaxSpareServers",
 				"val":12,
+				"fieldValueSeparator":' ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"MaxClients",
 				"val":40,
+				"fieldValueSeparator":' ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"MaxRequestsPerChild",
 				"val":300,
+				"fieldValueSeparator":' ',
 				"multiplierModifier":false
 			}
 		],
@@ -61,11 +66,13 @@ function setDefaults(){
 			{
 				"field":"max_execution_time",
 				"val":30,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":false
 			},
 			{
 				"field":"memory_limit",
 				"val":128000000,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":false
 			}
 		],
@@ -73,26 +80,31 @@ function setDefaults(){
 			{
 				"field":"max_connections",
 				"val":80,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"key_buffer",
 				"val":32000000,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"max_allowed_packet",
 				"val":1000000,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"thread_stack",
 				"val":128000,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":1
 			},
 			{
 				"field":"table_cache",
 				"val":32,
+				"fieldValueSeparator":' = ',
 				"multiplierModifier":1
 			}
 		]
@@ -152,7 +164,7 @@ function redisplaySettings(settings,divId){
 	$('#'+divId).html(function(){
 		htmloutput='';
 		$.each(settings, function(i, item){
-			htmloutput += item.field + ' ';
+			htmloutput += item.field + item.fieldValueSeparator;
 			htmloutput += $('#'+item.field).val() + '<br>';
 		});
 		return htmloutput;
