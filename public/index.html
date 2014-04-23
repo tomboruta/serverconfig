@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title> 
+			 
+			
+Server Config - Better defaults for LAMP (Linux Apache MySQL PHP) servers
+ 
+		</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme-simple.css">
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!-- Navbar -->
+		<div class="navbar navbar-default">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="http://serverconfig.io">Server Config BETA</a>
+	        </div>
+	        <div class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav">
+					          </ul>
+	          <ul class="nav navbar-nav navbar-right">
+	            									          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>
+		<!-- ./ navbar -->
+
+		<!-- Container -->
+		<div class="container">
+			<!-- Notifications -->
+						<!-- ./ notifications -->
+
+			<!-- Content -->
+				
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-info">
+				<div class="panel-heading"><h4>Select Server Options</h4></div>
+				<div class="panel-body">
+					<div class="selection-group server-selection">
+						<span class="server-options-stripe-label">
+						    Memory
+						</span>
+						<span id="memoryButtons"></span>
+					</div>
+					<div class="selection-group os-selection">
+						<span class="server-options-stripe-label">
+							OS
+						</span>
+						<button type="button" class="btn btn-lg btn-default active">Ubuntu</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Initial Settings for a <span class="displayServerSize">1GB</span> Server running on <span class="displayOS">Ubuntu</span></h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="well">
+				<form class="" role="form">
+					<h3>Apache</h3>
+					<span id="apache2Inputs"></span>
+				</form>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="well">
+				<form class="" role="form">
+					<h3>PHP</h3>
+					<span id="phpInputs"></span>
+				</form>
+				<div class="clearfix"></div>
+				<div>
+					<em>These PHP settings are good starting points for any sized server. They should only be higher when your specific PHP scripts require it.</em>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="well">
+				<form class="" role="form">
+					<h3>MySQL</h3>
+					<span id="myisamInputs"></span>
+				</form>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Change these Apache settings<br>
+					<em>/etc/apache2/apache2.conf</em>
+				</div>
+				<div class="panel-body">
+					&lt;IfModule mpm_prefork_module&gt;
+					<div id="apache2Settings"></div>
+					&lt;/IfModule&gt;
+<!--
+MaxClients = (Memory - other running stuff) / average size of apache process
+-->
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Change these PHP settings<br>
+					<em>/etc/php5/apache2/php.ini</em>
+				</div>
+				<div class="panel-body">
+					<div id="phpSettings"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Change these MySQL myisam settings<br>
+					<em>/etc/mysql/my.cnf</em>
+				</div>
+				<div class="panel-body">
+					[mysqld]<br>
+					...
+					<div id="myisamSettings"></div>
+					...
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3>To Do</h3>
+			<ul>
+				<li>Add more important settings</li>
+				<li>Add MySQL Innodb settings</li>
+				<li>
+					Add more OSes
+					<ul>
+						<li>Change configuration file locations for each OS</li>
+					</ul>
+				</li>
+				<li>
+					Calculations
+					<ul>
+						<li>Are simple multipiers ok for all the Apache & MySQL settings? Research</li>
+						<li>Make advanced mode where users can change individual values and calculate how much memory that will need</li>
+					</ul>
+				</li>
+				<li>Add Nginx settings</li>
+				<li>Add other server side languages</li>
+				<li>Add other databases</li>
+			</ul>
+
+			<h3>Give me your comments, suggestions, corrections</h3>
+			<p>For now, use <a href="http://www.reddit.com/r/webdev/comments/23lpa0/i_asked_webdev_if_there_was_a_server_settings/">this Reddit thread</a> to discuss.</p>
+		</div>
+	</div>
+
+			<!-- ./ content -->
+		</div>
+
+		<!-- ./ container -->
+
+		<!-- Javascripts
+		================================================== -->
+		<script src="js/jquery-2.0.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/serverConfig.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-737315-30', 'serverconfig.io');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>
