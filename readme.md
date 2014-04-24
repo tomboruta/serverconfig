@@ -2,7 +2,7 @@
 
 [Server Config](http://serverconfig.io/) is a project to help web developers use sensible server settings for web technologies. 
 
-### Contriubting
+### Contributing
 
 Given all the various web technologies and nuances in those technologies I have added this project to Github in the hopes to get the best info and the best settings for each technology. 
 
@@ -14,7 +14,6 @@ Issues and Pull Requests are always welcome.
 
 ### Suggestions
 
-- Add pop-up descriptions for each setting
 - Add more important settings
 - Add "best practices" settings
 - Webservers to add
