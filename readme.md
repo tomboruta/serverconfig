@@ -6,9 +6,18 @@
 
 Given all the various web technologies and nuances in those technologies I have added this project to Github in the hopes to get the best info and the best settings for each technology. 
 
-Note that this is not the full website. I have written the actual website in the php framework Laravel. However, the core functionality (currently) of Server Config does not need Laravel, so I did not want to hinder those without knowlegde of that particular framework from being discouraged from contributing. To that end, there is no need to make you setup a Laravel project to contribute to this repo.
+Although this uses the Laravel Framework, you can fork and use with no knowledge of Laravel by following the steps below
 
-I've tried to make it as easy as possible for anyone with HTML, jQuery, and Javascript knowledge to contribute. Fork this repo, download it to your machine and open /public/index.html in your web browser to test. All the functionality is in /public/js/serverConfig.js
+1. Clone the repo to your local machine
+2. Setup MAMP/WAMP/other to point to the /public folder
+3. Rename /.env.example as /.env.php
+4. Make sure /app/storage is writable by your webserver (you may not have to do anything)
+(no database is needed at this point)
+That's it.
+
+The HTML of the site is in /app/views/home.blade.php
+
+All the data and functionality is in /public/js/serverConfig.js
 
 Issues and Pull Requests are always welcome.
 
