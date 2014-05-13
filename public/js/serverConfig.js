@@ -230,7 +230,7 @@ function displayAllButtons(){
 function displayMemoryButtons(){
 	var htmloutput='';
 	$.each(serverConfig.memoryButtons, function(i, item){
-		htmloutput +='<button type="button" class="btn btn-lg btn-default" data-multiplier="'+item.multiplier+'">'+item.buttonText+'</button> ';
+		htmloutput +='<button type="button" class="btn btn-default" data-multiplier="'+item.multiplier+'">'+item.buttonText+'</button> ';
 	});
 	$('#memoryButtons').html(htmloutput);
 	$('button[data-multiplier=1]').addClass('active');
@@ -239,7 +239,7 @@ function displayMemoryButtons(){
 function displayOsButtons(){
 	var htmloutput='';
 	$.each(serverConfig.osButtons, function(i, item){
-		htmloutput +='<button type="button" class="btn btn-lg btn-default" data-defaultSelected="'+item.defaultSelected+'">'+item.buttonText+'</button> ';
+		htmloutput +='<button type="button" class="btn btn-default" data-defaultSelected="'+item.defaultSelected+'">'+item.buttonText+'</button> ';
 	});
 	$('#osButtons').html(htmloutput);
 	$('button[data-defaultSelected=true]').addClass('active');
@@ -248,7 +248,7 @@ function displayOsButtons(){
 function displayDataStoreButtons(){
 	var htmloutput='';
 	$.each(serverConfig.dataStoreButtons, function(i, item){
-		htmloutput +='<button type="button" class="btn btn-lg btn-default" data-defaultSelected="'+item.defaultSelected+'" data-name="'+item.name+'">'+item.buttonText+'</button> ';
+		htmloutput +='<button type="button" class="btn btn-default" data-defaultSelected="'+item.defaultSelected+'" data-name="'+item.name+'">'+item.buttonText+'</button> ';
 	});
 	$('#dataStoreButtons').html(htmloutput);
 	$('button[data-defaultSelected=true]').addClass('active');
