@@ -158,7 +158,7 @@ key buffer (MyISAM)	Lower this	Lower this once I change all tables to Innodb
 	<div class="row">
 		<div class="col-md-12">
 
-			<h3>Github</h3>
+			<h3>Github ...</h3>
 			<iframe src="http://ghbtns.com/github-btn.html?user=tomboruta&repo=serverconfig&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
 			<iframe src="http://ghbtns.com/github-btn.html?user=tomboruta&repo=serverconfig&type=fork&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
 			<p><a href="https://github.com/tomboruta/serverconfig">Server Config on Github</a>. Issues and Pull Request are always welcome.</p>
