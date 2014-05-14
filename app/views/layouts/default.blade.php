@@ -87,6 +87,8 @@
 		<script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
 		<!-- Bootstrap -->
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- Popover replacement -->
+		<script src="js/plugins/bootstrapx-clickover.js" type="text/javascript"></script>
 		<!-- iCheck -->
 		<script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 

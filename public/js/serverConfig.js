@@ -263,7 +263,7 @@ function displayAllInputs(){
 function displayInputs(settings,spanId){
 	var htmloutput='';
 	$.each(settings, function(i, item){
-		htmloutput += '<div class="form-group"><label for="'+item.field+'" class="col-md-7 control-label hasPopup" data-title="'+item.popupDescription+'" data-content="<a href=\''+item.referenceUrl+'\'>Reference</a>" data-html="true" data-placement="top">'+item.field+' <span class="glyphicon glyphicon-question-sign"></span><p class="help-block">'+item.labelHelpBlock+'</p></label><div class="col-md-5"><input type="text" class="form-control" id="'+item.field+'" value="-" readonly></div></div>';
+		htmloutput += '<div class="form-group"><label for="'+item.field+'" class="col-md-7 control-label" data-toggle="popover" data-title="'+item.popupDescription+'" data-content="<a href=\''+item.referenceUrl+'\'>Reference</a>" data-html="true" data-placement="top">'+item.field+' <span class="glyphicon glyphicon-question-sign"></span><p class="help-block">'+item.labelHelpBlock+'</p></label><div class="col-md-5"><input type="text" class="form-control" id="'+item.field+'" value="-" readonly></div></div>';
 	});
 	$('#'+spanId).html(htmloutput);
 }
@@ -324,7 +324,7 @@ function redisplayNumbers(){
 	redisplaySettings(eval("serverConfig."+selectedTechnologies.serverSideLanguage+"Settings"),"serverSideLanguageSettings");
 	redisplaySettings(eval("serverConfig."+selectedTechnologies.dataStore+"Settings"),"dataStoreSettings");
 
-	$('label.hasPopup').popover();
+	$('[data-toggle="popover"]').clickover();
 }
 
 function recalculateNumbers(multiplier){
@@ -359,7 +359,7 @@ $(document).ready(function() {
 
 	redisplayNumbers();
 
-	$('label.hasPopup').popover();
+	$('[data-toggle="popover"]').clickover();
 
 	// selecting a memory size
 	$('.server-selection button').on('click',function(){
@@ -386,4 +386,7 @@ $(document).ready(function() {
 		$(this).addClass('active');
 		$(this).parent().children('.dataStore-selection button').not(this).removeClass('active');
 	});
+
+
+
 });
