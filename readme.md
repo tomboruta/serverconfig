@@ -12,7 +12,9 @@ Although this uses the Laravel Framework, you can fork and use with no knowledge
 2. Setup MAMP/WAMP/other to point to the /public folder
 3. Rename /.env.example as /.env.php
 4. Make sure /app/storage is writable by your webserver (you may not have to do anything)
+
 (no database is needed at this point)
+
 That's it.
 
 The HTML of the site is in /app/views/home.blade.php
