@@ -207,15 +207,6 @@ function setDefaultValues(){
 				"multiplierModifier":1,
 				"popupDescription":"The size in bytes of the buffer pool, the memory area where InnoDB caches table and index data.",
 				"referenceUrl":"http://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size"
-			},
-			{
-				"field":"innodb_log_file_size",
-				"labelHelpBlock":"",
-				"val":64000000,
-				"fieldValueSeparator":" = ",
-				"multiplierModifier":1,
-				"popupDescription":"The size in bytes of each log file in a log group.",
-				"referenceUrl":"http://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_log_file_size"
 			}
 		]
 	};
