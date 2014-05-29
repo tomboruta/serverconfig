@@ -10,7 +10,6 @@ serverConfig = [];
 function setDefaultTechnologies(){
 	selectedTechnologies = {
 		"webserver":"apache2",
-		"serverSideLanguage":"php",
 		"dataStore":"innodb"
 	};
 }
@@ -19,9 +18,6 @@ function setTechnologyTemplates(){
 	technologyTemplates = {
 		"apache2Template" : {
 				"displayTitle" : "Apache"
-			},
-		"phpTemplate" : {
-				"displayTitle" : "PHP"
 			},
 		"innodbTemplate" : {
 				"displayTitle" : "MySQL (innodb)"
@@ -120,26 +116,6 @@ function setDefaultValues(){
 				"multiplierModifier":false,
 				"popupDescription":"Limit on the number of requests that an individual child server will handle during its life.",
 				"referenceUrl":"http://httpd.apache.org/docs/2.2/mod/mpm_common.html#maxrequestsperchild"
-			}
-		],
-		"phpSettings" : [
-			{
-				"field":"max_execution_time",
-				"labelHelpBlock":"",
-				"val":30,
-				"fieldValueSeparator":" = ",
-				"multiplierModifier":false,
-				"popupDescription":"This sets the maximum time in seconds a script is allowed to run before it is terminated by the parser.",
-				"referenceUrl":"http://us1.php.net/manual/en/info.configuration.php#ini.max-execution-time"
-			},
-			{
-				"field":"memory_limit",
-				"labelHelpBlock":"",
-				"val":128000000,
-				"fieldValueSeparator":" = ",
-				"multiplierModifier":false,
-				"popupDescription":"This sets the maximum amount of memory in bytes that a script is allowed to allocate. ",
-				"referenceUrl":"http://www.php.net/manual/en/ini.core.php#ini.memory-limit"
 			}
 		],
 		"myisamSettings" : [
@@ -247,7 +223,6 @@ function displayDataStoreButtons(){
 
 function displayAllInputs(){
 	displayInputs(serverConfig.apache2Settings,'apache2Inputs');
-	displayInputs(serverConfig.phpSettings,'phpInputs');
 	displayInputs(eval("serverConfig."+selectedTechnologies.dataStore+"Settings"),'dataStoreInputs');
 }
 
@@ -306,13 +281,11 @@ function redisplayNumbers(){
 	$('.datastoreTitle').html(eval("technologyTemplates."+selectedTechnologies.dataStore+"Template.displayTitle"));
 
 	redisplayInputValues(eval("serverConfig."+selectedTechnologies.webserver+"Settings"));
-	redisplayInputValues(eval("serverConfig."+selectedTechnologies.serverSideLanguage+"Settings"));
 	redisplayInputValues(eval("serverConfig."+selectedTechnologies.dataStore+"Settings"));
 
 	shortenNumbers();
 
 	redisplaySettings(eval("serverConfig."+selectedTechnologies.webserver+"Settings"),"webserverSettings");
-	redisplaySettings(eval("serverConfig."+selectedTechnologies.serverSideLanguage+"Settings"),"serverSideLanguageSettings");
 	redisplaySettings(eval("serverConfig."+selectedTechnologies.dataStore+"Settings"),"dataStoreSettings");
 
 	$('[data-toggle="popover"]').clickover();
