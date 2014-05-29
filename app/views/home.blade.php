@@ -14,12 +14,26 @@ Server Config - A better starting point for your server
 {{-- Content --}}
 @section('content')
 
-	<h2 class="page-header">
-		Select Server Options
-		<small>
-			Get a better starting point for your server over the default settings.
-		</small>
-	</h2>
+	<div class="row">
+		<div class="col-md-8">
+			<h2 class="page-header">
+				Select Server Options
+				<small>
+					Get a better starting point for your server over the default settings.
+				</small>
+			</h2>
+		</div>
+		<div class="col-md-4">
+			<p>
+			<form action="#" method="post" id="emailsubscribe">
+				<label for="email">Signup for Server Config updates</label><br>
+				<input type="email" id="email" name="email" placeholder="Email Address">
+				<button type="submit">Subscribe</button>
+				<div id="errormsg" class="text-red"></div>
+			</form>
+			</p>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="box box-solid box-success">
@@ -182,4 +196,28 @@ Server Config - A better starting point for your server
 		</div>
 	</div>
 
+@stop
+
+@section('javascript')
+@parent
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#emailsubscribe').submit(function(e){
+			//.....
+	        //show some spinner etc to indicate operation in progress
+	        //.....
+			e.preventDefault();
+			var email = $("input#email").val();
+			var dataString = 'email='+email;
+            $.ajax({
+                type: "POST",
+                url : "subscribe",
+                data : dataString,
+                success : function(data){
+                	$('#'+data.selector).html(data.msg);
+                }
+            },"json");
+		});
+	});
+</script>
 @stop
