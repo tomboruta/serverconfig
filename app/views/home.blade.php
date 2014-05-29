@@ -28,7 +28,8 @@ Server Config - A better starting point for your server
 			<form action="#" method="post" id="emailsubscribe">
 				<label for="email">Signup for Server Config updates</label><br>
 				<input type="email" id="email" name="email" placeholder="Email Address">
-				<button type="submit">Subscribe</button>
+				<button id="emailsubscribebutton" type="submit">Subscribe</button>
+				<span id="emailsubscribeinidcator"></span>
 				<div id="errormsg" class="text-red"></div>
 			</form>
 			</p>
@@ -203,9 +204,8 @@ Server Config - A better starting point for your server
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#emailsubscribe').submit(function(e){
-			//.....
-	        //show some spinner etc to indicate operation in progress
-	        //.....
+			$('#emailsubscribebutton').prop('disabled',true);
+			$('#emailsubscribeinidcator').html('<img src="/img/ajax-loader-small.gif">');
 			e.preventDefault();
 			var email = $("input#email").val();
 			var dataString = 'email='+email;
@@ -217,6 +217,8 @@ Server Config - A better starting point for your server
                 	$('#'+data.selector).html(data.msg);
                 }
             },"json");
+            $('#emailsubscribebutton').prop('disabled',false);
+            $('#emailsubscribeinidcator').html('');
 		});
 	});
 </script>
