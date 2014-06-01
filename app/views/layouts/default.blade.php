@@ -17,8 +17,6 @@
 		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 		<!-- Ionicons -->
 		<link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
-		<!-- nouislider -->
-		<link href="css/jquery.nouislider.css" rel="stylesheet" type="text/css" />
 		<!-- Theme style -->
 		<link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
@@ -93,12 +91,10 @@
 		<script src="js/plugins/bootstrapx-clickover.js" type="text/javascript"></script>
 		<!-- iCheck -->
 		<script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-		<!-- nouislider -->
-		<script src="js/jquery.nouislider.min.js" type="text/javascript"></script>
 		<!-- AdminLTE App -->
 		<script src="js/AdminLTE/app.js" type="text/javascript"></script>
 
-		<script src="/js/serverConfig.js"></script>
+		<script src="js/serverConfig.js"></script>
 
 		@section('javascript')
 		@show
