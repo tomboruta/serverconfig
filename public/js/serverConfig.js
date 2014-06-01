@@ -33,30 +33,81 @@ function setDefaultValues(){
 		"memoryButtons" : [
 			{
 				"buttonText":"512MB",
-				"multiplier":0.5
+				"multiplier":0.5,
+				"digitalOceanPrice":5,
+				"linodePrice":false
 			},
 			{
-				"_comment":"This is the default server size.",
 				"buttonText":"1GB",
-				"multiplier":1
+				"multiplier":1,
+				"digitalOceanPrice":10,
+				"linodePrice":false
 			},
 			{
 				"buttonText":"2GB",
-				"multiplier":2
+				"multiplier":2,
+				"digitalOceanPrice":20,
+				"linodePrice":20
 			},
 			{
 				"buttonText":"4GB",
-				"multiplier":4
+				"multiplier":4,
+				"digitalOceanPrice":40,
+				"linodePrice":40
 			},
 			{
 				"buttonText":"8GB",
-				"multiplier":8
+				"multiplier":8,
+				"digitalOceanPrice":80,
+				"linodePrice":80
+			},
+			{
+				"buttonText":"16GB",
+				"multiplier":16,
+				"digitalOceanPrice":160,
+				"linodePrice":160
+			},
+			{
+				"buttonText":"32GB",
+				"multiplier":32,
+				"digitalOceanPrice":320,
+				"linodePrice":320
+			},
+			{
+				"buttonText":"48GB",
+				"multiplier":48,
+				"digitalOceanPrice":480,
+				"linodePrice":480
+			},
+			{
+				"buttonText":"64GB",
+				"multiplier":64,
+				"digitalOceanPrice":640,
+				"linodePrice":640
+			},
+			{
+				"buttonText":"96GB",
+				"multiplier":96,
+				"digitalOceanPrice":false,
+				"linodePrice":960
 			}
 		],
 		"osButtons" : [
 			{
 				"buttonText":"Ubuntu",
 				"defaultSelected":true
+			}
+		],
+		"webServerButtons" : [
+			{
+				"buttonText":"Apache",
+				"name":"apache",
+				"defaultSelected":true
+			},
+			{
+				"buttonText":"Nginx",
+				"name":"nginx",
+				"defaultSelected":false
 			}
 		],
 		"dataStoreButtons" : [
@@ -229,7 +280,7 @@ function displayAllInputs(){
 function displayInputs(settings,spanId){
 	var htmloutput='';
 	$.each(settings, function(i, item){
-		htmloutput += '<div class="form-group"><label for="'+item.field+'" class="col-md-7 control-label" data-toggle="popover" data-title="'+item.popupDescription+'" data-content="<a href=\''+item.referenceUrl+'\'>Reference</a>" data-html="true" data-placement="top">'+item.field+' <span class="glyphicon glyphicon-question-sign"></span><p class="help-block">'+item.labelHelpBlock+'</p></label><div class="col-md-5"><input type="text" class="form-control" id="'+item.field+'" value="-" readonly></div></div>';
+		htmloutput += '<div class="form-group"><label for="'+item.field+'" class="col-md-8 control-label" data-toggle="popover" data-title="'+item.popupDescription+'" data-content="<a href=\''+item.referenceUrl+'\'>Reference</a>" data-html="true" data-placement="top">'+item.field+' <span class="glyphicon glyphicon-question-sign"></span><p class="help-block">'+item.labelHelpBlock+'</p></label><div class="col-md-4"><input type="text" class="form-control" id="'+item.field+'" value="-" readonly></div></div>';
 	});
 	$('#'+spanId).html(htmloutput);
 }
@@ -350,7 +401,5 @@ $(document).ready(function() {
 		$(this).addClass('active');
 		$(this).parent().children('.dataStore-selection button').not(this).removeClass('active');
 	});
-
-
 
 });
