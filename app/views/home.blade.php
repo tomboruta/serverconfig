@@ -46,15 +46,20 @@ Server Config - A better starting point for your server
 					<span id="memoryButtons"></span>
 				</div>
 			</div><!-- /.box -->
+			
 		</div>
 		<div class="col-md-4">
-			<div class="box box-solid box-info">
+			<div class="box box-solid box-warning">
 				<div class="box-header">
-					<i class="fa fa-laptop"></i>
-					<h3 class="box-title">OS</h3>
+					<i class="fa fa-certificate"></i>
+					<h3 class="box-title">Web Server</h3>
 				</div>
-				<div class="box-body os-selection">
-					<span id="osButtons"></span>
+				<div class="box-body webServer-selection">
+					<span id="webServerButtons"></span>
+					<form role="form">
+						<span id="webServerInputs"></span>
+					</form>
+					<div class="clearfix"></div>
 				</div>
 			</div><!-- /.box -->
 		</div>
@@ -66,49 +71,6 @@ Server Config - A better starting point for your server
 				</div>
 				<div class="box-body dataStore-selection">
 					<span id="dataStoreButtons"></span>
-				</div>
-			</div><!-- /.box -->
-		</div>
-	</div>
-
-	<h2 class="page-header">Initial Settings for a <span class="displayServerSize">1GB</span> Server running on <span class="displayOS">Ubuntu</span></h2>
-
-	<div class="row">
-		<div class="col-md-4">
-			<div class="box box-warning">
-				<div class="box-header">
-					<i class="fa fa-certificate"></i>
-					<h3 class="box-title">Apache</h3>
-				</div>
-				<div class="box-body">
-					<form role="form">
-						<span id="apache2Inputs"></span>
-					</form>
-					<div class="clearfix"></div>
-				</div>
-			</div><!-- /.box -->
-		</div>
-		<div class="col-md-4">
-			<div class="box box-success">
-				<div class="box-header">
-					<i class="fa fa-gear"></i>
-					<h3 class="box-title">PHP</h3>
-				</div>
-				<div class="box-body">
-					<form role="form">
-						<span id="phpInputs"></span>
-					</form>
-					<div class="clearfix"></div>
-				</div>
-			</div><!-- /.box -->
-		</div>
-		<div class="col-md-4">
-			<div class="box box-danger">
-				<div class="box-header">
-					<i class="fa fa-download"></i>
-					<h3 class="box-title datastoreTitle"></h3>
-				</div>
-				<div class="box-body">
 					<form role="form">
 						<span id="dataStoreInputs"></span>
 					</form>
@@ -118,57 +80,105 @@ Server Config - A better starting point for your server
 		</div>
 	</div>
 
+	<h2 class="page-header">Initial Settings for a <span class="displayServerSize">1GB</span> Server</h2>
+
 	<div class="row">
 		<div class="col-md-4">
-			<div class="box box-solid">
+			<div class="box box-default">
 				<div class="box-header">
+					<h3 class="box-title">Quick FAQs</h3>
 				</div>
 				<div class="box-body">
-					<div class="alert alert-warning">
-						<i class="fa fa-certificate"></i>
-						Change these Apache settings<br>
-						<em>/etc/apache2/apache2.conf</em>
-					</div>
-					...<br>
-					&lt;IfModule mpm_prefork_module&gt;
-					<div id="webserverSettings"></div>
-					&lt;/IfModule&gt;<br>
-					...
+					<dl>
+						<dt class="control-label" data-toggle="popover" data-title="Why no Server-side language settings?" data-content="PHP, Python, Ruby, etc already have good default settings." data-html="true" data-placement="top">
+							Why no Server-side language settings?
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</dt>
+						<dd>&nbsp;</dd>
+						<dt class="control-label" data-toggle="popover" data-title="Why no CPU or hard drive options?" data-content="CPU speeds and hard drive sizes on most hosting providers are more than sufficient for most projects." data-html="true" data-placement="top">
+							Why no CPU or Hard Drive options?
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</dt>
+						<dd>&nbsp;</dd>
+					</dl>
 				</div>
 			</div><!-- /.box -->
 		</div>
 		<div class="col-md-4">
-			<div class="box box-solid">
+			<div class="box box-warning">
 				<div class="box-header">
+					<h3 class="box-title">
+						Change these <span class="webServerTitle"></span> settings 
+						<br> 
+						<small class="text-muted webServerConfigLocation"></small>
+					</h3>
+					
 				</div>
 				<div class="box-body">
-					<div class="alert alert-success">
-						<i class="fa fa-gear"></i>
-						Change these PHP settings<br>
-						<em>/etc/php5/apache2/php.ini</em>
-					</div>
-					...
-					<div id="serverSideLanguageSettings"></div>
-					...
+					<div id="webServerSettings_before"></div>
+					<div id="webServerSettings"></div>
+					<div id="webServerSettings_after"></div>
 				</div>
 			</div><!-- /.box -->
 		</div>
 		<div class="col-md-4">
-			<div class="box box-solid">
+			<div class="box box-danger">
 				<div class="box-header">
+					<h3 class="box-title">
+						Change these <span class="datastoreTitle"></span> settings
+						<br>
+						<small class="datastoreConfigLocation"></small>
+					</h3>
 				</div>
 				<div class="box-body">
-					<div class="alert alert-danger">
-						<i class="fa fa-download"></i>
-						Change these <span class="datastoreTitle"></span> settings<br>
-						<em>/etc/mysql/my.cnf</em>
-					</div>
-					[mysqld]<br>
-					...
+					<div id="dataStoreSettings_before"></div>
 					<div id="dataStoreSettings"></div>
-					...
+					<div id="dataStoreSettings_after"></div>
 				</div>
 			</div><!-- /.box -->
+		</div>
+	</div>
+
+	<h2 class="page-header">Suggested Server Options</h2>
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3 class="serverOptionsMemory">
+                        1GB 
+                    </h3>
+                    <p>
+                        Digital Ocean
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-cloud"></i>
+                </div>
+                <a class="small-box-footer" href="https://www.digitalocean.com/?refcode=90e1dbb028ee" target="_blank">
+                    $<span id="digitalOceanPrice"></span>/month <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+		</div>
+		<div class="col-md-4">
+			<div class="small-box bg-green">
+                <div class="inner">
+                    <h3 class="serverOptionsMemory">
+                        1GB 
+                    </h3>
+                    <p>
+                        Linode
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-cloud"></i>
+                </div>
+                <a class="small-box-footer" href="https://www.linode.com/?r=6568c4f9d1ff6cb63355b12e676cda9d519ef85b" target="_blank">
+                    $<span id="linodePrice"></span>/month <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+		</div>
+		<div class="col-md-4">
 		</div>
 	</div>
 
