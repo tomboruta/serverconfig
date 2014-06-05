@@ -28,18 +28,12 @@ Issues and Pull Requests are always welcome.
 - Add more important settings
 - Add "best practices" settings
 - Webservers to add
-	- Nginx
 	- IIS
-- Languages to add
-	- Python
-	- Ruby
-	- Node.js
-	- ASP.NET
 - Datastores to add
 	- MongoDB
 	- Postgres
 	- MSSQL
-- Add more OSes
+- Add OSes
 	- Change configuration file locations for each OS
 - Add better defaults for CMSes
 	- Wordpress
