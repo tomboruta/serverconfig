@@ -13,7 +13,7 @@ function setDefaultTechnologies(){
 		"dataStore":"innodb",
 		"memory":"1GB",
 		"digitalOceanPrice":10,
-		"linodePrice":"N/A"
+		"linodePrice":10
 	};
 }
 
@@ -63,7 +63,7 @@ function setDefaultValues(){
 				"multiplier":1,
 				"cores":1,
 				"digitalOceanPrice":10,
-				"linodePrice":"N/A"
+				"linodePrice":10
 			},
 			{
 				"buttonText":"2GB",
