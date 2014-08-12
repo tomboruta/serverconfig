@@ -190,10 +190,10 @@ Server Config - A better starting point for your server
 	<h4 class="page-header"></h4>
 
 	<div class="row">
-		<div class="col-xs-4">
+		<div class="col-xs-4 text-center">
 			<a href="https://github.com/tomboruta/serverconfig">Github Repo</a>
 		</div>
-		<div class="col-xs-4">
+		<div class="col-xs-4 text-center">
 			<a href="http://www.reddit.com/r/serverconfig/">Official Subreddit</a>
 		</div>
 	</div>
