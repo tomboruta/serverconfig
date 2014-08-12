@@ -90,13 +90,18 @@ Server Config - A better starting point for your server
 				</div>
 				<div class="box-body">
 					<dl>
-						<dt class="control-label" data-toggle="popover" data-title="Why no Server-side language settings?" data-content="PHP, Python, Ruby, etc already have good default settings." data-html="true" data-placement="top">
-							Why no Server-side language settings?
+						<dt class="control-label" data-toggle="popover" data-title="Why shouldn't I just use the defaults?" data-content="The default settings do not take into account the amount of memory your system has, which is usually the most important factor in determing good numbers for these settings." data-html="true" data-placement="top">
+							Why shouldn't I just use the defaults?
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</dt>
+						<dd>&nbsp;</dd>
+						<dt class="control-label" data-toggle="popover" data-title="Why no server-side language settings?" data-content="PHP, Python, Ruby, etc already have good default settings." data-html="true" data-placement="top">
+							Why no server-side language settings?
 							<span class="glyphicon glyphicon-question-sign"></span>
 						</dt>
 						<dd>&nbsp;</dd>
 						<dt class="control-label" data-toggle="popover" data-title="Why no CPU or hard drive options?" data-content="CPU speeds and hard drive sizes on most hosting providers are more than sufficient for most projects." data-html="true" data-placement="top">
-							Why no CPU or Hard Drive options?
+							Why no CPU or hard drive options?
 							<span class="glyphicon glyphicon-question-sign"></span>
 						</dt>
 						<dd>&nbsp;</dd>
@@ -182,30 +187,17 @@ Server Config - A better starting point for your server
 		</div>
 	</div>
 
+	<h4 class="page-header"></h4>
+
 	<div class="row">
-		<div class="col-md-12">
-
-			<h3><i class="fa fa-github"></i> Github</h3>
-			<iframe src="http://ghbtns.com/github-btn.html?user=tomboruta&repo=serverconfig&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
-			<iframe src="http://ghbtns.com/github-btn.html?user=tomboruta&repo=serverconfig&type=fork&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
-			<dl class="dl-horizontal">
-                <dt><a href="https://github.com/tomboruta/serverconfig">Server Config repo</a></dt>
-                <dd>Issues and Pull Request are always welcome.</dd>
-            </dl>
-
-			<h3><i class="fa fa-rss-square"></i> Subscribe to r/serverconfig</h3>
-			<dl class="dl-horizontal">
-                <dt><a href="http://www.reddit.com/r/serverconfig/">r/serverconfig</a></dt>
-                <dd>Get ServerConfig.io updates and discuss web servers in general.</dd>
-            </dl>
-
-			<h3><i class="fa fa-thumbs-o-up"></i> Special Thanks</h3>
-			<dl class="dl-horizontal">
-                <dt><a href="http://www.almsaeedstudio.com/">Almsaeed Studio</a></dt>
-                <dd>For the awesome <a href="https://github.com/almasaeed2010/AdminLTE">open source</a> AdminLTE website template.</dd>
-            </dl>
+		<div class="col-xs-4">
+			<a href="https://github.com/tomboruta/serverconfig">Github Repo</a>
+		</div>
+		<div class="col-xs-4">
+			<a href="http://www.reddit.com/r/serverconfig/">Official Subreddit</a>
 		</div>
 	</div>
+	<br>
 
 @stop
 
