@@ -147,14 +147,15 @@ Server Config - A better starting point for your server
 	<h2 class="page-header">Suggested Server Options</h2>
 
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="small-box bg-aqua">
                 <div class="inner">
                     <h3 class="serverOptionsMemory">
                         1GB 
                     </h3>
                     <p>
-                        Digital Ocean
+                        Digital Ocean<br>
+                        <strong>Sign up for a $10 Free Credit</strong>
                     </p>
                 </div>
                 <div class="icon">
@@ -165,14 +166,15 @@ Server Config - A better starting point for your server
                 </a>
             </div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="small-box bg-green">
                 <div class="inner">
                     <h3 class="serverOptionsMemory">
                         1GB 
                     </h3>
                     <p>
-                        Linode
+                        Linode<br>
+                        &nbsp;
                     </p>
                 </div>
                 <div class="icon">
@@ -183,17 +185,15 @@ Server Config - A better starting point for your server
                 </a>
             </div>
 		</div>
-		<div class="col-md-4">
-		</div>
 	</div>
 
 	<h4 class="page-header"></h4>
 
 	<div class="row">
-		<div class="col-xs-4 text-center">
+		<div class="col-xs-6 text-center">
 			<a href="https://github.com/tomboruta/serverconfig">Github Repo</a>
 		</div>
-		<div class="col-xs-4 text-center">
+		<div class="col-xs-6 text-center">
 			<a href="http://www.reddit.com/r/serverconfig/">Official Subreddit</a>
 		</div>
 	</div>
