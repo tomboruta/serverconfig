@@ -181,7 +181,7 @@
             <a href="https://github.com/tomboruta/serverconfig">Github Repo</a>
         </div>
         <div class="col-xs-6 text-center">
-            <a href="http://www.reddit.com/r/serverconfig/">Official Subreddit</a>
+            <a href="http://www.reddit.com/r/serverconfig/">Official Subreddit...</a>
         </div>
     </div>
     <br>
