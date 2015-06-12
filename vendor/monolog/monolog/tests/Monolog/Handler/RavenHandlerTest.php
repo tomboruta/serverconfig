@@ -73,6 +73,38 @@ class RavenHandlerTest extends TestCase
         $this->assertContains($record['message'], $ravenClient->lastData['message']);
     }
 
+    public function testTag()
+    {
+        $ravenClient = $this->getRavenClient();
+        $handler = $this->getHandler($ravenClient);
+
+        $tags = array(1, 2, 'foo');
+        $record = $this->getRecord(Logger::INFO, "test", array('tags' => $tags));
+        $handler->handle($record);
+
+        $this->assertEquals($tags, $ravenClient->lastData['tags']);
+    }
+
+    public function testUserContext()
+    {
+        $ravenClient = $this->getRavenClient();
+        $handler = $this->getHandler($ravenClient);
+
+        $user = array(
+            'id' => '123',
+            'email' => 'test@test.com'
+        );
+        $record = $this->getRecord(Logger::INFO, "test", array('user' => $user));
+
+        $handler->handle($record);
+        $this->assertEquals($user, $ravenClient->context->user);
+
+        $secondRecord = $this->getRecord(Logger::INFO, "test without user");
+
+        $handler->handle($secondRecord);
+        $this->assertNull($ravenClient->context->user);
+    }
+
     public function testException()
     {
         $ravenClient = $this->getRavenClient();

@@ -18,16 +18,15 @@ namespace Monolog\Formatter;
  */
 class LogglyFormatter extends JsonFormatter
 {
-
     /**
      * Overrides the default batch mode to new lines for compatibility with the
      * Loggly bulk API.
      *
-     * @param integer $batch_mode
+     * @param integer $batchMode
      */
-    public function __construct($batch_mode = self::BATCH_MODE_NEWLINES)
+    public function __construct($batchMode = self::BATCH_MODE_NEWLINES, $appendNewline = false)
     {
-        parent::__construct($batch_mode);
+        parent::__construct($batchMode, $appendNewline);
     }
 
     /**
@@ -39,11 +38,10 @@ class LogglyFormatter extends JsonFormatter
     public function format(array $record)
     {
         if (isset($record["datetime"]) && ($record["datetime"] instanceof \DateTime)) {
-            $record["timestamp"] = $record["datetime"]->format("c");
-            // @todo unset the 'datetime' parameter, retained for BC
+            $record["timestamp"] = $record["datetime"]->format("Y-m-d\TH:i:s.uO");
+            // TODO 2.0 unset the 'datetime' parameter, retained for BC
         }
 
         return parent::format($record);
     }
-
 }

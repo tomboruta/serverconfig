@@ -20,32 +20,43 @@ namespace Monolog\Formatter;
  */
 class JsonFormatter implements FormatterInterface
 {
-
-    protected $batch_mode;
-
     const BATCH_MODE_JSON = 1;
     const BATCH_MODE_NEWLINES = 2;
 
+    protected $batchMode;
+    protected $appendNewline;
+
     /**
-     * @param int $batch_mode
+     * @param int $batchMode
      */
-    public function __construct($batch_mode = self::BATCH_MODE_JSON)
+    public function __construct($batchMode = self::BATCH_MODE_JSON, $appendNewline = true)
     {
-        $this->batch_mode = $batch_mode;
+        $this->batchMode = $batchMode;
+        $this->appendNewline = $appendNewline;
     }
 
     /**
      * The batch mode option configures the formatting style for
      * multiple records. By default, multiple records will be
      * formatted as a JSON-encoded array. However, for
-     * compatibility with some API endpoints, alternive styles
+     * compatibility with some API endpoints, alternative styles
      * are available.
      *
      * @return int
      */
     public function getBatchMode()
     {
-        return $this->batch_mode;
+        return $this->batchMode;
+    }
+
+    /**
+     * True if newlines are appended to every formatted record
+     *
+     * @return bool
+     */
+    public function isAppendingNewlines()
+    {
+        return $this->appendNewline;
     }
 
     /**
@@ -53,7 +64,7 @@ class JsonFormatter implements FormatterInterface
      */
     public function format(array $record)
     {
-        return json_encode($record);
+        return json_encode($record) . ($this->appendNewline ? "\n" : '');
     }
 
     /**
@@ -61,15 +72,13 @@ class JsonFormatter implements FormatterInterface
      */
     public function formatBatch(array $records)
     {
-        switch ($this->batch_mode) {
-
+        switch ($this->batchMode) {
             case static::BATCH_MODE_NEWLINES:
                 return $this->formatBatchNewlines($records);
 
             case static::BATCH_MODE_JSON:
             default:
                 return $this->formatBatchJson($records);
-
         }
     }
 
@@ -95,11 +104,13 @@ class JsonFormatter implements FormatterInterface
     {
         $instance = $this;
 
+        $oldNewline = $this->appendNewline;
+        $this->appendNewline = false;
         array_walk($records, function (&$value, $key) use ($instance) {
             $value = $instance->format($value);
         });
+        $this->appendNewline = $oldNewline;
 
         return implode("\n", $records);
     }
-
 }
