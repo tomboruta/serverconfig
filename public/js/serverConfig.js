@@ -1,5 +1,5 @@
 /**
-ServerConfig.io
+ServerConfig.org
 Author: Tom Boruta
 http://tomboruta.com
 **/

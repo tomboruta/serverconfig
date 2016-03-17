@@ -1,6 +1,6 @@
 ## Server Config
 
-[Server Config](http://serverconfig.io/) is a project to help web developers use sensible server settings for web technologies. 
+[Server Config](http://serverconfig.org/) is a project to help web developers use sensible server settings for web technologies. 
 
 ### Contributing
 
